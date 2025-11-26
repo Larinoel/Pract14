@@ -1,0 +1,42 @@
+{
+    public class Archer : Player
+    {
+        public override void Attack()
+        {
+            Console.WriteLine("стреляю из лука");
+        }
+    }
+}
+{
+    public class Warrior : Player
+    {
+        public override void Attack()
+        {
+            Console.WriteLine("рублю мечом");
+        }
+        
+        
+    }
+}
+{
+    public class Player
+    {
+        public virtual void Attack()
+        {
+            Console.WriteLine("атакую!");
+        }
+    }
+}
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            Player[] players = { new Warrior(), new Archer(), new Player() };
+            foreach (var player in players)
+            {
+                player.Attack();
+            }
+        }
+    }
+}
