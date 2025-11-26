@@ -1,0 +1,38 @@
+{
+    public class Drum : Instrument
+    {
+        public override void Play()
+        {
+            Console.WriteLine("бам!");
+        }
+    }
+}
+{
+    public class Guitar : Instrument
+    {
+        public override void Play()
+        {
+            Console.WriteLine("бриньк!");
+        }
+    }
+}
+ public class Instrument
+ {
+      public virtual void Play()
+     {
+         Console.WriteLine("Играет музыка...");
+     }
+ }
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            Instrument[] band = { new Guitar(), new Drum(), new Instrument() };
+            foreach (var instrument in band)
+            {
+                instrument.Play();
+            }
+        }
+    }
+}
